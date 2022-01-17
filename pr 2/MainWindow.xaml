@@ -1,0 +1,88 @@
+﻿<Window x:Class="pr_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pr_2"
+        mc:Ignorable="d"
+        Title="Практическая работа №2" Height="310" Width="480" MinHeight="300" MinWidth="480" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="125.04"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="Файл">
+                <MenuItem x:Name="FileOpen"
+                          Header="Открыть"
+                          Click="FileOpen_Click"/>
+                <MenuItem x:Name="FileSave" 
+                          Header="Сохранить"
+                          Click="FileSave_Click"/>
+                <MenuItem x:Name="Clear" 
+                          Header="Очистить"
+                          Click="Clear_Click"/>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Программа">
+                <MenuItem x:Name="About"
+                          Header="О программе"
+                          Click="About_Click"/>
+                <MenuItem x:Name="Exit" 
+                          Header="Выход"
+                          Click="Exit_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center" Width="424">
+            <Label Content="Кол-во элементов: "
+                   Width="115" 
+                   Margin="10,10,0,10" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"/>
+            <TextBox x:Name="InputN"
+                     Width="100" 
+                     Margin="0,20,20,20"
+                     HorizontalAlignment="Center"
+                     MinHeight="15"/>
+            <Button x:Name="GenerateTab"
+                    Margin="15"
+                    Width="150"
+                    Content="Сгенерировать таблицу"
+                    HorizontalAlignment="Center"
+                    Click="GenerateTab_Click"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="2"
+                  x:Name="MainDataGrid"
+                  Margin="5,5,5,5"
+                  IsReadOnly="True"/>
+        <StackPanel Grid.Row="3"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center" Width="348">
+            <Button x:Name="Calc"
+                    Content="Рассчитать" 
+                    Width="100" 
+                    Margin="15" 
+                    MinHeight="10" 
+                    Click="Calc_Click" Height="65"/>
+            <Label Content="Результат: " 
+                   Margin="10,10,0,10"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+            <TextBox x:Name="ResOutput"
+                     MinHeight="20"
+                     Width="120"
+                     Margin="0,20,20,20"
+                     IsReadOnly="True"
+                     VerticalAlignment="Center" Height="85"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
